@@ -115,8 +115,6 @@ function checkSpace(r, c)
         }
     }
 
-    board[r][c].style.backgroundColor = GREEN; // update space
-
     return [r, c];
 }
 
@@ -191,12 +189,15 @@ function move(ts, oldts)
             if(i == 0)
             {
                 let temp = addSpace(direction, active[i][0], active[i][1]);
+                
                 if(temp == 0)
                 {
                     resetGame();
                 }
                 else
                 {
+                    
+                    board[temp[0]][temp[1]].style.backgroundColor = GREEN; // update space
                     active[i] = temp;
                 }
             }
