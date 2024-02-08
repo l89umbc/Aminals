@@ -182,10 +182,8 @@ function move(ts, oldts)
                 }
                 else
                 {
-                    if(active[i][0] != active[0][0] || active[i][1] != active[0][1])
-                    {
-                        board[active[i][0]][active[i][1]].style.backgroundColor = GREY;
-                    }
+                    board[active[i][0]][active[i][1]].style.backgroundColor = GREY;
+                    board[active[0][0]][active[0][1]].style.backgroundColor = GREEN; // cyot issue
                 }
             }
 
