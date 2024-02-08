@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <script src="./frog.js" defer></script>
+    <link rel="icon" href="./free-frog.png">
+    <title>Aminals</title>
+</head>
+<body class="frog-body">
+    <nav>
+        <div class="nav-style">
+            <a as="a" class="nav-button" href="./home.html">
+                Home
+            </a>
+            <a as="a" class="nav-button" style="opacity: 50%;" href="./frog.html">
+                Frog
+            </a>
+            <a as="a" class="nav-button" href="./snake.html">
+                Snake
+            </a>
+            <a class="nav-button" href="./aboutme.html">
+                About Me
+            </a>
+        </div>
+    </nav>
+    <div class="main-holder">
+        <div class="frog-holder">
+            <img id="frog" class="frog-img" src="./Frog_sit.png">
+            <img id="frog-jump" class="frog-jump-img" src="./Frog_jump.png">
+            <div id="frog-shadow" class="frog-shadow"></div>
+        </div>
+        <div class="grid">
+            <div class="lily-holder">
+                <div class="lily-img-holder">
+                    <button onclick="lilyHit()">
+                        <img src="./lily-pad-dark-green-shad.png" class="lily-img">
+                    </button>
+                </div>
+                <div class="lily-text-holder">
+                    <p class="lily-text">
+                        While most of the frogs we know today had humble beginnings
+                         after the extinction of dinosaurs, there is evidence as early as 200
+                          million years ago of frog existence.
+                    </p>
+                </div>
+            </div>
+            <div class="lily-holder">
+                <div class="lily-text-holder">
+                    <p class="lily-text">
+                        Many frogs can jump up to 20 times their body length!
+                    </p>
+                </div>
+                <div class="lily-img-holder">
+                    <button onclick="lilyHit()">
+                        <img src="./lily-pad-dark-green-shad.png" class="lily-img">
+                    </button>
+                </div>
+            </div>
+            <div class="lily-holder">
+                <div class="lily-img-holder">
+                    <button onclick="lilyHit()">
+                        <img src="./lily-pad-dark-green-shad.png" class="lily-img">
+                    </button>
+                </div>
+                <div class="lily-text-holder">
+                    <p class="lily-text">
+                        Frogs in captivity live up to 20 years. The lifespan of frogs in the 
+                        wild is still a mystery to experts!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
