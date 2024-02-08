@@ -96,39 +96,41 @@ function resetGame()
     active = [[MIDDLE, MIDDLE]];
 }
 
+// can snake move forward?
+function checkSpace(r, c)
+{
+    // wall bounds
+    if(r < 0){r = HEIGHT-1;}
+    else if(r >= HEIGHT){r = 0;}
+    else if(c < 0){c = WIDTH-1;}
+    else if(c >= WIDTH){c = 0;}
+
+    if(board[r][c].style.backgroundColor == PINK){eaten = true;}
+    else if(board[r][c].style.backgroundColor == GREEN) // hit
+    {
+        let back = active[active.length-1];
+        if(back[0] != r && back[1] != c) // deals with the 'chase your own tail' issue
+        {
+            return 0;
+        }
+    }
+
+    return [r, c];
+}
+
 // move the snake forward
 function addSpace(direction, r, c)
 {
     switch(direction)
     {
         case NORTH:
-            if(r-1 < 0){r = HEIGHT;}
-            if(board[r-1][c].style.backgroundColor == PINK){eaten = true;}
-            if(board[r-1][c].style.backgroundColor == GREEN){return 0;}
-
-            board[r-1][c].style.backgroundColor = GREEN;
-            return [r-1, c];
+            return checkSpace(r-1, c);
         case EAST:
-            if(c+1>=WIDTH){c = -1;}
-            if(board[r][c+1].style.backgroundColor == PINK){eaten = true;}
-            if(board[r][c+1].style.backgroundColor == GREEN){return 0;}
-
-            board[r][c+1].style.backgroundColor = GREEN;
-            return [r, c+1];
+            return checkSpace(r, c+1);
         case SOUTH:
-            if(r+1>=HEIGHT){r = -1;}
-            if(board[r+1][c].style.backgroundColor == PINK){eaten = true;}
-            if(board[r+1][c].style.backgroundColor == GREEN){return 0;}
-
-            board[r+1][c].style.backgroundColor = GREEN;
-            return [r+1, c];
+            return checkSpace(r+1, c);
         case WEST:
-            if(c-1<0){c = HEIGHT;}
-            if(board[r][c-1].style.backgroundColor == PINK){eaten = true;}
-            if(board[r][c-1].style.backgroundColor == GREEN){return 0;}
-
-            board[r][c-1].style.backgroundColor = GREEN;
-            return [r, c-1];
+            return checkSpace(r, c-1);
         default:
             break;
     }
