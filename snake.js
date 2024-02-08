@@ -182,7 +182,10 @@ function move(ts, oldts)
                 }
                 else
                 {
-                    board[active[i][0]][active[i][1]].style.backgroundColor = GREY;
+                    if(active[i][0] != active[0][0] && active[i][1] != active[0][1])
+                    {
+                        board[active[i][0]][active[i][1]].style.backgroundColor = GREY;
+                    }
                 }
             }
 
