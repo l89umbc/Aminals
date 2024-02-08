@@ -86,7 +86,7 @@ function fly(currX, currY, finX, finY, incX, incY)
 {
     currX += incX;
     currY += incY;
-    frogJump.style.left = `${currX-20}px`;
+    frogJump.style.left = `${currX}px`;
     frogJump.style.top = `${currY}px`;
     if((currX >= finX && incX >= 0) || (currX <= finX && incX <= 0))
     {
