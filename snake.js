@@ -115,6 +115,8 @@ function checkSpace(r, c)
         }
     }
 
+    board[r][c].style.backgroundColor = GREEN; // update space
+
     return [r, c];
 }
 
