@@ -109,7 +109,7 @@ function checkSpace(r, c)
     else if(board[r][c].style.backgroundColor == GREEN) // hit
     {
         let back = active[active.length-1];
-        if(back[0] != r && back[1] != c) // deals with the 'chase your own tail' issue
+        if(back[0] != r || back[1] != c) // deals with the 'chase your own tail' issue
         {
             return 0;
         }
@@ -182,7 +182,7 @@ function move(ts, oldts)
                 }
                 else
                 {
-                    if(active[i][0] != active[0][0] && active[i][1] != active[0][1])
+                    if(active[i][0] != active[0][0] || active[i][1] != active[0][1])
                     {
                         board[active[i][0]][active[i][1]].style.backgroundColor = GREY;
                     }
